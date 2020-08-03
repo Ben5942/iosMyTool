@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA2A7D3524D8739500CF0ACB /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2A7D3324D8739500CF0ACB /* ItemCell.m */; };
+		EA2A7D3624D8739500CF0ACB /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2A7D3424D8739500CF0ACB /* ItemCell.xib */; };
 		EAA5549124D822AD0053B610 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA5549024D822AD0053B610 /* AppDelegate.m */; };
 		EAA5549424D822AD0053B610 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA5549324D822AD0053B610 /* SceneDelegate.m */; };
 		EAA5549724D822AD0053B610 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA5549624D822AD0053B610 /* ViewController.m */; };
@@ -40,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA2A7D3224D8739500CF0ACB /* ItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
+		EA2A7D3324D8739500CF0ACB /* ItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
+		EA2A7D3424D8739500CF0ACB /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		EAA5548C24D822AC0053B610 /* MyTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA5548F24D822AD0053B610 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EAA5549024D822AD0053B610 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -92,6 +97,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA2A7D3124D8736200CF0ACB /* view */ = {
+			isa = PBXGroup;
+			children = (
+				EA2A7D3224D8739500CF0ACB /* ItemCell.h */,
+				EA2A7D3324D8739500CF0ACB /* ItemCell.m */,
+				EA2A7D3424D8739500CF0ACB /* ItemCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		EAA5548324D822AC0053B610 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +130,7 @@
 		EAA5548E24D822AC0053B610 /* MyTool */ = {
 			isa = PBXGroup;
 			children = (
+				EA2A7D3124D8736200CF0ACB /* view */,
 				EAA554C424D822F90053B610 /* PingTool */,
 				EAA5548F24D822AD0053B610 /* AppDelegate.h */,
 				EAA5549024D822AD0053B610 /* AppDelegate.m */,
@@ -274,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2A7D3624D8739500CF0ACB /* ItemCell.xib in Resources */,
 				EAA5549F24D822AF0053B610 /* LaunchScreen.storyboard in Resources */,
 				EAA5549C24D822AF0053B610 /* Assets.xcassets in Resources */,
 				EAA5549A24D822AD0053B610 /* Main.storyboard in Resources */,
@@ -301,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2A7D3524D8739500CF0ACB /* ItemCell.m in Sources */,
 				EAA5549724D822AD0053B610 /* ViewController.m in Sources */,
 				EAA554CD24D823150053B610 /* STSimplePing.m in Sources */,
 				EAA554D024D823150053B610 /* NodeListView.swift in Sources */,
