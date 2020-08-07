@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "ItemCell.h"
+#import "view/ItemCell.h"
 
 @interface ViewController ()
 
@@ -27,6 +27,7 @@
     flowLayout.minimumInteritemSpacing = 10;
     
     self.itemCollectionview.collectionViewLayout = flowLayout;
+    [self.itemCollectionview registerNib:[UINib nibWithNibName:@"ItemCell" bundle:nil] forCellWithReuseIdentifier:@"ItemCell"];
     
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -40,7 +41,11 @@
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    return <#expression#>
+    
+    ItemCell *acell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ItemCell" forIndexPath:indexPath];
+    
+    
+    return acell;
 }
 
 

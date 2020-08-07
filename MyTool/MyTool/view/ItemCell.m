@@ -15,4 +15,8 @@
     // Initialization code
 }
 
+-(void)resetConfig{
+    
+}
+
 @end
