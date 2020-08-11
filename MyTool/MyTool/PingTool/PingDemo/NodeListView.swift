@@ -1,10 +1,4 @@
-//
-//  NodeListView.swift
-//  Potatso
-//
-//  Created by 张亚鹏 on 2019/10/27.
-//  Copyright © 2019 TouchingApp. All rights reserved.
-//
+
 import Foundation
 class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
     
@@ -13,6 +7,7 @@ class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
     var fatherVC: HallVC? = nil
     var nodes : [Proxy]? = []
     
+    @IBOutlet weak var tipLb: UILabel!
     
     @IBOutlet weak var viewForTap: UIView!
     
@@ -107,6 +102,13 @@ class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
         nodeListView.reloadData()
         self.isHidden = false
         upView(view: contentView, up: true, remove: false, removeBlock: nil)
+        
+        if nodes?.count ?? 0>7 {
+            tipLb.isHidden = false
+        }else{
+            tipLb.isHidden = true
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -150,27 +152,33 @@ class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
         sev!.callbackHandler = { (item, arr) in
             if (item?.status == STDPingStatus.didStart) {
                 //开始发包
-                if (index + 1 < self.nodes!.count) {
-                    self.nextPing(index: (index + 1))
-                }
                 print("didStart:\(self.speedArr![index]) index :\(index)")
             }else if (item?.status == STDPingStatus.didFailToSendPacket) {
                 //发包失败
                 self.speedArr![index] = "连接失败"
                 print("didFailToSendPacket:\(self.speedArr![index]) index :\(index)")
+                if (index + 1 < self.nodes!.count) {
+                    self.nextPing(index: (index + 1))
+                }
                 if (index + 1 >= self.nodes!.count) {
                     self.nodeListView.reloadData()
                 }
             }else if (item?.status == STDPingStatus.didReceivePacket) {
                 //收到回包
-                self.speedArr![index] = String.init(format: "%.2fms", item?.timeMilliseconds ?? 0  >= 100.0 ? item?.timeMilliseconds ?? 0 - 50.0 : item?.timeMilliseconds ?? 0 )
+                self.speedArr![index] = String.init(format: "%.2fms", item?.timeMilliseconds ?? 0)
             print("didReceivePacket:\(self.speedArr![index]) index :\(index)")
+                if (index + 1 < self.nodes!.count) {
+                    self.nextPing(index: (index + 1))
+                }
                 if (index + 1 >= self.nodes!.count) {
                     self.nodeListView.reloadData()
                 }
             }else if (item?.status == STDPingStatus.didReceiveUnexpectedPacket) {
                 //收到意外回包
                 self.speedArr![index] = "超时"
+                if (index + 1 < self.nodes!.count) {
+                    self.nextPing(index: (index + 1))
+                }
                 if (index + 1 >= self.nodes!.count) {
                     self.nodeListView.reloadData()
                 }
@@ -180,12 +188,18 @@ class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
                 //超时
                 self.speedArr![index] = "超时"
             print("didTimeout:\(self.speedArr![index]) index :\(index)")
+                if (index + 1 < self.nodes!.count) {
+                    self.nextPing(index: (index + 1))
+                }
                 if (index + 1 >= self.nodes!.count) {
                     self.nodeListView.reloadData()
                 }
             }else if (item?.status == STDPingStatus.error) {
                 //失败
                 self.speedArr![index] = "连接失败"
+                if (index + 1 < self.nodes!.count) {
+                    self.nextPing(index: (index + 1))
+                }
                 if (index + 1 >= self.nodes!.count) {
                     self.nodeListView.reloadData()
                 }

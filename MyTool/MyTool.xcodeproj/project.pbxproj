@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		09EBA68ADB8E4CA10EFB99E3 /* Pods_MyToolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 134141B365EDA50F3969C1D1 /* Pods_MyToolTests.framework */; };
 		1D03FA224BD0BBBEAEAF7FDC /* Pods_MyTool_MyToolUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E8FDFB8B33FB83377B8842 /* Pods_MyTool_MyToolUITests.framework */; };
 		8DFBF43741CFBBB192D8C86B /* Pods_MyTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A24D0AE230C52C6465A8BA9 /* Pods_MyTool.framework */; };
+		EA06E02A24E2F2DB00A089F0 /* NodeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA06E02724E2F2DB00A089F0 /* NodeListCell.xib */; };
+		EA06E02B24E2F2DB00A089F0 /* NodeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06E02824E2F2DB00A089F0 /* NodeListCell.swift */; };
+		EA06E02C24E2F2DB00A089F0 /* NodeListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA06E02924E2F2DB00A089F0 /* NodeListView.xib */; };
 		EA2A7D3524D8739500CF0ACB /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2A7D3324D8739500CF0ACB /* ItemCell.m */; };
 		EA2A7D3624D8739500CF0ACB /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2A7D3424D8739500CF0ACB /* ItemCell.xib */; };
 		EAA5549124D822AD0053B610 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA5549024D822AD0053B610 /* AppDelegate.m */; };
@@ -54,6 +57,9 @@
 		AD9C1ABF4221985E09F0DD63 /* Pods-MyTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTool.release.xcconfig"; path = "Target Support Files/Pods-MyTool/Pods-MyTool.release.xcconfig"; sourceTree = "<group>"; };
 		D8E8FDFB8B33FB83377B8842 /* Pods_MyTool_MyToolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTool_MyToolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB0DA9CFD45335E6775005DB /* Pods-MyToolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyToolTests.debug.xcconfig"; path = "Target Support Files/Pods-MyToolTests/Pods-MyToolTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EA06E02724E2F2DB00A089F0 /* NodeListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NodeListCell.xib; sourceTree = "<group>"; };
+		EA06E02824E2F2DB00A089F0 /* NodeListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeListCell.swift; sourceTree = "<group>"; };
+		EA06E02924E2F2DB00A089F0 /* NodeListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NodeListView.xib; sourceTree = "<group>"; };
 		EA2A7D3224D8739500CF0ACB /* ItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
 		EA2A7D3324D8739500CF0ACB /* ItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
 		EA2A7D3424D8739500CF0ACB /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
@@ -134,7 +140,6 @@
 				DB0DA9CFD45335E6775005DB /* Pods-MyToolTests.debug.xcconfig */,
 				A12E886639AAD6AB05DFFFDA /* Pods-MyToolTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -220,6 +225,9 @@
 		EAA554C524D823150053B610 /* PingDemo */ = {
 			isa = PBXGroup;
 			children = (
+				EA06E02824E2F2DB00A089F0 /* NodeListCell.swift */,
+				EA06E02724E2F2DB00A089F0 /* NodeListCell.xib */,
+				EA06E02924E2F2DB00A089F0 /* NodeListView.xib */,
 				EAA554C624D823150053B610 /* STSimplePing.m */,
 				EAA554C724D823150053B610 /* STDPingServices.h */,
 				EAA554C824D823150053B610 /* SimplePing.h */,
@@ -349,7 +357,9 @@
 			files = (
 				EA2A7D3624D8739500CF0ACB /* ItemCell.xib in Resources */,
 				EAA5549F24D822AF0053B610 /* LaunchScreen.storyboard in Resources */,
+				EA06E02A24E2F2DB00A089F0 /* NodeListCell.xib in Resources */,
 				EAA5549C24D822AF0053B610 /* Assets.xcassets in Resources */,
+				EA06E02C24E2F2DB00A089F0 /* NodeListView.xib in Resources */,
 				EAA5549A24D822AD0053B610 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +491,7 @@
 				EA2A7D3524D8739500CF0ACB /* ItemCell.m in Sources */,
 				EAA5549724D822AD0053B610 /* ViewController.m in Sources */,
 				EAA554CD24D823150053B610 /* STSimplePing.m in Sources */,
+				EA06E02B24E2F2DB00A089F0 /* NodeListCell.swift in Sources */,
 				EAA554D024D823150053B610 /* NodeListView.swift in Sources */,
 				EAA5789624E0372F00FCD8A8 /* HeaderSwift.swift in Sources */,
 				EAA5549124D822AD0053B610 /* AppDelegate.m in Sources */,
