@@ -6,6 +6,7 @@ target 'MyTool' do
   use_frameworks!
 
   pod 'MBProgressHUD'
+  pod 'AsyncSwift'
 
   # Pods for MyTool
 

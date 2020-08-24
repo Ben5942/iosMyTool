@@ -15,6 +15,7 @@
 		EA06E02C24E2F2DB00A089F0 /* NodeListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA06E02924E2F2DB00A089F0 /* NodeListView.xib */; };
 		EA2A7D3524D8739500CF0ACB /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2A7D3324D8739500CF0ACB /* ItemCell.m */; };
 		EA2A7D3624D8739500CF0ACB /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2A7D3424D8739500CF0ACB /* ItemCell.xib */; };
+		EA8F818924F3A114004C84A0 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F818824F3A114004C84A0 /* Localized.swift */; };
 		EAA5549124D822AD0053B610 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA5549024D822AD0053B610 /* AppDelegate.m */; };
 		EAA5549424D822AD0053B610 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA5549324D822AD0053B610 /* SceneDelegate.m */; };
 		EAA5549724D822AD0053B610 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA5549624D822AD0053B610 /* ViewController.m */; };
@@ -63,6 +64,8 @@
 		EA2A7D3224D8739500CF0ACB /* ItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
 		EA2A7D3324D8739500CF0ACB /* ItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
 		EA2A7D3424D8739500CF0ACB /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		EA8F817624F39FB1004C84A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EA8F818824F3A114004C84A0 /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		EAA5548C24D822AC0053B610 /* MyTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA5548F24D822AD0053B610 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EAA5549024D822AD0053B610 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -123,6 +126,7 @@
 		2A08A2C05EEF3BC27F219702 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA8F817624F39FB1004C84A0 /* Foundation.framework */,
 				1A24D0AE230C52C6465A8BA9 /* Pods_MyTool.framework */,
 				D8E8FDFB8B33FB83377B8842 /* Pods_MyTool_MyToolUITests.framework */,
 				134141B365EDA50F3969C1D1 /* Pods_MyToolTests.framework */,
@@ -242,6 +246,7 @@
 		EAA5789424E036E300FCD8A8 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				EA8F818824F3A114004C84A0 /* Localized.swift */,
 				EAA5789524E0372F00FCD8A8 /* HeaderSwift.swift */,
 			);
 			path = Tools;
@@ -489,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA2A7D3524D8739500CF0ACB /* ItemCell.m in Sources */,
+				EA8F818924F3A114004C84A0 /* Localized.swift in Sources */,
 				EAA5549724D822AD0053B610 /* ViewController.m in Sources */,
 				EAA554CD24D823150053B610 /* STSimplePing.m in Sources */,
 				EA06E02B24E2F2DB00A089F0 /* NodeListCell.swift in Sources */,

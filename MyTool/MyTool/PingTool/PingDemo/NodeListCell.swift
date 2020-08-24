@@ -1,6 +1,7 @@
 
 
 import Foundation
+
 class NodeListCell: UITableViewCell {
     
     @IBOutlet weak var imgV: UIImageView!
