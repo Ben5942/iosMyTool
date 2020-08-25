@@ -1,5 +1,7 @@
 
 import Foundation
+import UIKit
+
 class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
     
     
