@@ -6,8 +6,8 @@ class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
     
     
     
-    var fatherVC: HallVC? = nil
-    var nodes : [Proxy]? = []
+    var fatherVC: UIViewController? = nil
+    var nodes : [String]? = []
     
     @IBOutlet weak var tipLb: UILabel!
     
@@ -18,7 +18,7 @@ class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var contentView: UIView!
     
-    init(frame: CGRect, fataherVc : HallVC) {
+    init(frame: CGRect, fataherVc : UIViewController) {
         super.init(frame: frame)
         self.fatherVC = fataherVc
         let v : UIView = Bundle.main.loadNibNamed("NodeListView", owner: self, options: nil)?.last as! UIView
@@ -94,7 +94,7 @@ class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
     
     var speedArr : [String]? = []
     
-    func getNodex(nodeList : [Proxy]) -> Void {
+    func getNodex(nodeList : [String]) -> Void {
         nodes = nodeList
         speedArr?.removeAll()
         for _ in (nodes ?? []) {
