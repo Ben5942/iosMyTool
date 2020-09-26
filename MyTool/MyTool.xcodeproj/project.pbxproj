@@ -92,6 +92,7 @@
 		EAA554CB24D823150053B610 /* SimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
 		EAA554CC24D823150053B610 /* NodeListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeListView.swift; sourceTree = "<group>"; };
 		EAA5789524E0372F00FCD8A8 /* HeaderSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderSwift.swift; sourceTree = "<group>"; };
+		EAF9247F251F8F46005CCCC1 /* ObjectSwiftHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectSwiftHeader.h; sourceTree = "<group>"; };
 		F4498F207F6759591238703C /* Pods-MyTool-MyToolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTool-MyToolUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyTool-MyToolUITests/Pods-MyTool-MyToolUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +161,7 @@
 		EAA5548324D822AC0053B610 = {
 			isa = PBXGroup;
 			children = (
+				EAF9247F251F8F46005CCCC1 /* ObjectSwiftHeader.h */,
 				EAA5548E24D822AC0053B610 /* MyTool */,
 				EAA554AA24D822AF0053B610 /* MyToolTests */,
 				EAA554B524D822AF0053B610 /* MyToolUITests */,
@@ -614,6 +616,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/zhangyapeng/Desktop/GitHub/iosTool/MyTool/ObjectSwiftHeader.h;
 			};
 			name = Debug;
 		};
@@ -665,6 +668,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/zhangyapeng/Desktop/GitHub/iosTool/MyTool/ObjectSwiftHeader.h;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

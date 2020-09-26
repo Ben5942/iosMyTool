@@ -7,7 +7,7 @@ class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
     
     
     var fatherVC: UIViewController? = nil
-    var nodes : [String]? = []
+    var urlS : [String]? = []
     
     @IBOutlet weak var tipLb: UILabel!
     
@@ -94,10 +94,10 @@ class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
     
     var speedArr : [String]? = []
     
-    func getNodex(nodeList : [String]) -> Void {
-        nodes = nodeList
+    func getUrls(urlList : [String]) -> Void {
+        urlS = urlList
         speedArr?.removeAll()
-        for _ in (nodes ?? []) {
+        for _ in (urlS ?? []) {
             speedArr?.append("")
         }
         
@@ -105,7 +105,7 @@ class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
         self.isHidden = false
         upView(view: contentView, up: true, remove: false, removeBlock: nil)
         
-        if nodes?.count ?? 0>7 {
+        if urlS?.count ?? 0>7 {
             tipLb.isHidden = false
         }else{
             tipLb.isHidden = true
@@ -114,13 +114,13 @@ class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nodes?.count ?? 0
+        return urlS?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell : NodeListCell = tableView.dequeueReusableCell(withIdentifier: "NodeListCell", for: indexPath) as! NodeListCell
-        cell.config(configProxy: nodes![indexPath.row],speed: speedArr![indexPath.row])
+        cell.config(configUrl: urlS![indexPath.row],speed: speedArr![indexPath.row])
         return cell
         
     }
@@ -128,29 +128,19 @@ class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
         return 40
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (self.fatherVC!.status != .off) {
-            self.tap()
-            self.fatherVC!.showTextHUD("StopVPNFirstTip".localized(), dismissAfterDelay: TimeInterval(HudDelayTime))
-        }else{
-            let proxy : Proxy = (tableView.cellForRow(at: indexPath) as! NodeListCell).proxy!
-            self.fatherVC!.selectCellDo(p : proxy)
-        }
-        
-        
-    }
+    
     
     
     func nextPing(index : Int) -> Void {
         
-        if (nodes == nil || nodes!.count <= 0) {
+        if (urlS == nil || urlS!.count <= 0) {
             return
         }
         
-        var nowProxy = nodes![index]
+        let nowProxy = urlS![index]
         speedArr![index] = ""
         
-        var sev = STDPingServices.init(address: nowProxy.host)
+        var sev = STDPingServices.init(address: nowProxy)
         sev!.callbackHandler = { (item, arr) in
             if (item?.status == STDPingStatus.didStart) {
                 //开始发包
@@ -159,29 +149,29 @@ class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
                 //发包失败
                 self.speedArr![index] = "连接失败"
                 print("didFailToSendPacket:\(self.speedArr![index]) index :\(index)")
-                if (index + 1 < self.nodes!.count) {
+                if (index + 1 < self.urlS!.count) {
                     self.nextPing(index: (index + 1))
                 }
-                if (index + 1 >= self.nodes!.count) {
+                if (index + 1 >= self.urlS!.count) {
                     self.nodeListView.reloadData()
                 }
             }else if (item?.status == STDPingStatus.didReceivePacket) {
                 //收到回包
                 self.speedArr![index] = String.init(format: "%.2fms", item?.timeMilliseconds ?? 0)
             print("didReceivePacket:\(self.speedArr![index]) index :\(index)")
-                if (index + 1 < self.nodes!.count) {
+                if (index + 1 < self.urlS!.count) {
                     self.nextPing(index: (index + 1))
                 }
-                if (index + 1 >= self.nodes!.count) {
+                if (index + 1 >= self.urlS!.count) {
                     self.nodeListView.reloadData()
                 }
             }else if (item?.status == STDPingStatus.didReceiveUnexpectedPacket) {
                 //收到意外回包
                 self.speedArr![index] = "超时"
-                if (index + 1 < self.nodes!.count) {
+                if (index + 1 < self.urlS!.count) {
                     self.nextPing(index: (index + 1))
                 }
-                if (index + 1 >= self.nodes!.count) {
+                if (index + 1 >= self.urlS!.count) {
                     self.nodeListView.reloadData()
                 }
 
@@ -190,19 +180,19 @@ class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
                 //超时
                 self.speedArr![index] = "超时"
             print("didTimeout:\(self.speedArr![index]) index :\(index)")
-                if (index + 1 < self.nodes!.count) {
+                if (index + 1 < self.urlS!.count) {
                     self.nextPing(index: (index + 1))
                 }
-                if (index + 1 >= self.nodes!.count) {
+                if (index + 1 >= self.urlS!.count) {
                     self.nodeListView.reloadData()
                 }
             }else if (item?.status == STDPingStatus.error) {
                 //失败
                 self.speedArr![index] = "连接失败"
-                if (index + 1 < self.nodes!.count) {
+                if (index + 1 < self.urlS!.count) {
                     self.nextPing(index: (index + 1))
                 }
-                if (index + 1 >= self.nodes!.count) {
+                if (index + 1 >= self.urlS!.count) {
                     self.nodeListView.reloadData()
                 }
                 print("error:\(self.speedArr![index]) index :\(index)")
@@ -213,7 +203,7 @@ class NodeListView: UIView,UITableViewDelegate,UITableViewDataSource {
             
             
             if(item?.status != STDPingStatus.didStart){
-                self.nodes![index] = nowProxy
+                self.urlS![index] = nowProxy
                 sev?.cancel()
             }
             

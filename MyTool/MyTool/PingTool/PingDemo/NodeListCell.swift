@@ -11,7 +11,7 @@ class NodeListCell: UITableViewCell {
     
     @IBOutlet weak var speedLb: UILabel!
     
-    var proxy : Proxy? = nil
+    var url : String? = nil
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -22,7 +22,7 @@ class NodeListCell: UITableViewCell {
     }
     
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         let v : UITableViewCell  = Bundle.main.loadNibNamed("NodeListCell", owner: self, options: nil)?.last as! UITableViewCell
         
@@ -35,10 +35,10 @@ class NodeListCell: UITableViewCell {
     
     
     
-    func config(configProxy : Proxy,speed : String?) -> Void {
-        proxy = configProxy
+    func config(configUrl : String,speed : String?) -> Void {
+        url = configUrl
         
-        nameLb.text = proxy?.name
+        nameLb.text = url
         if (speed != nil && (!NSString.init(string: speed!).isEqual(to: "")))  {
             speedLb.text = speed
         }else{
