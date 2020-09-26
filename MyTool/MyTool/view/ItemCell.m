@@ -15,8 +15,8 @@
     // Initialization code
 }
 
--(void)resetConfig{
-    
+-(void)setTitle:(NSString *)title{
+    _title = title;
+    [_titleLb setText:title];
 }
-
 @end

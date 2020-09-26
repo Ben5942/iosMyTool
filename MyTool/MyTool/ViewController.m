@@ -25,9 +25,15 @@
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     flowLayout.minimumLineSpacing = 10;
     flowLayout.minimumInteritemSpacing = 10;
+    flowLayout.itemSize = CGSizeMake(50, 50);
     
-    self.itemCollectionview.collectionViewLayout = flowLayout;
+    self.itemCollectionview = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
+    self.itemCollectionview.delegate = self;
+    self.itemCollectionview.dataSource = self;
+    self.itemCollectionview.backgroundColor = UIColor.whiteColor;
+//    self.itemCollectionview.collectionViewLayout = flowLayout;
     [self.itemCollectionview registerNib:[UINib nibWithNibName:@"ItemCell" bundle:nil] forCellWithReuseIdentifier:@"ItemCell"];
+    [self.view addSubview:self.itemCollectionview];
     
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -43,7 +49,7 @@
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     ItemCell *acell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ItemCell" forIndexPath:indexPath];
-    
+    [acell setTitle:self.itemArrs[indexPath.row]];
     
     return acell;
 }

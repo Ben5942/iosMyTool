@@ -10,7 +10,7 @@
 
 @interface ViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *itemCollectionview;
+@property (strong, nonatomic)  UICollectionView *itemCollectionview;
 
 
 @property(strong,nonatomic) NSMutableArray *itemArrs;
