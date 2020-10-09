@@ -24,8 +24,6 @@
     [_window makeKeyAndVisible];
     _window.rootViewController = vc;
     
-    
-    
     return YES;
 }
 
