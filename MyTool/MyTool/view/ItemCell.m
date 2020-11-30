@@ -18,5 +18,9 @@
 -(void)setTitle:(NSString *)title{
     _title = title;
     [_titleLb setText:title];
+    
+    
+//    self.layer.borderWidth = .5;
+//    self.layer.borderColor = UIColor.grayColor.CGColor;
 }
 @end

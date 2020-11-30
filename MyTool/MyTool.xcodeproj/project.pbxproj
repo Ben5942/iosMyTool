@@ -10,6 +10,10 @@
 		09EBA68ADB8E4CA10EFB99E3 /* Pods_MyToolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 134141B365EDA50F3969C1D1 /* Pods_MyToolTests.framework */; };
 		1D03FA224BD0BBBEAEAF7FDC /* Pods_MyTool_MyToolUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E8FDFB8B33FB83377B8842 /* Pods_MyTool_MyToolUITests.framework */; };
 		8DFBF43741CFBBB192D8C86B /* Pods_MyTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A24D0AE230C52C6465A8BA9 /* Pods_MyTool.framework */; };
+		E26B08A2256CBA1700C41D00 /* BigImgViewInWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E26B08A0256CBA1700C41D00 /* BigImgViewInWindow.m */; };
+		E26B08A4256CBB0400C41D00 /* timg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E26B08A3256CBB0400C41D00 /* timg.jpg */; };
+		E26B08A8256CBBF300C41D00 /* BigImgTbVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E26B08A6256CBBF300C41D00 /* BigImgTbVC.m */; };
+		E26B08A9256CBBF300C41D00 /* BigImgTbVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E26B08A7256CBBF300C41D00 /* BigImgTbVC.xib */; };
 		EA06E02A24E2F2DB00A089F0 /* NodeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA06E02724E2F2DB00A089F0 /* NodeListCell.xib */; };
 		EA06E02B24E2F2DB00A089F0 /* NodeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06E02824E2F2DB00A089F0 /* NodeListCell.swift */; };
 		EA06E02C24E2F2DB00A089F0 /* NodeListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA06E02924E2F2DB00A089F0 /* NodeListView.xib */; };
@@ -58,6 +62,12 @@
 		AD9C1ABF4221985E09F0DD63 /* Pods-MyTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTool.release.xcconfig"; path = "Target Support Files/Pods-MyTool/Pods-MyTool.release.xcconfig"; sourceTree = "<group>"; };
 		D8E8FDFB8B33FB83377B8842 /* Pods_MyTool_MyToolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTool_MyToolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB0DA9CFD45335E6775005DB /* Pods-MyToolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyToolTests.debug.xcconfig"; path = "Target Support Files/Pods-MyToolTests/Pods-MyToolTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E26B08A0256CBA1700C41D00 /* BigImgViewInWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigImgViewInWindow.m; sourceTree = "<group>"; };
+		E26B08A1256CBA1700C41D00 /* BigImgViewInWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigImgViewInWindow.h; sourceTree = "<group>"; };
+		E26B08A3256CBB0400C41D00 /* timg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timg.jpg; sourceTree = "<group>"; };
+		E26B08A5256CBBF300C41D00 /* BigImgTbVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BigImgTbVC.h; sourceTree = "<group>"; };
+		E26B08A6256CBBF300C41D00 /* BigImgTbVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BigImgTbVC.m; sourceTree = "<group>"; };
+		E26B08A7256CBBF300C41D00 /* BigImgTbVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BigImgTbVC.xib; sourceTree = "<group>"; };
 		EA06E02724E2F2DB00A089F0 /* NodeListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NodeListCell.xib; sourceTree = "<group>"; };
 		EA06E02824E2F2DB00A089F0 /* NodeListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeListCell.swift; sourceTree = "<group>"; };
 		EA06E02924E2F2DB00A089F0 /* NodeListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NodeListView.xib; sourceTree = "<group>"; };
@@ -148,6 +158,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E26B089F256CAD4F00C41D00 /* BigImg */ = {
+			isa = PBXGroup;
+			children = (
+				E26B08A3256CBB0400C41D00 /* timg.jpg */,
+				E26B08A1256CBA1700C41D00 /* BigImgViewInWindow.h */,
+				E26B08A0256CBA1700C41D00 /* BigImgViewInWindow.m */,
+				E26B08A5256CBBF300C41D00 /* BigImgTbVC.h */,
+				E26B08A6256CBBF300C41D00 /* BigImgTbVC.m */,
+				E26B08A7256CBBF300C41D00 /* BigImgTbVC.xib */,
+			);
+			path = BigImg;
+			sourceTree = "<group>";
+		};
 		EA2A7D3124D8736200CF0ACB /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +184,6 @@
 		EAA5548324D822AC0053B610 = {
 			isa = PBXGroup;
 			children = (
-				EAF9247F251F8F46005CCCC1 /* ObjectSwiftHeader.h */,
 				EAA5548E24D822AC0053B610 /* MyTool */,
 				EAA554AA24D822AF0053B610 /* MyToolTests */,
 				EAA554B524D822AF0053B610 /* MyToolUITests */,
@@ -184,6 +206,7 @@
 		EAA5548E24D822AC0053B610 /* MyTool */ = {
 			isa = PBXGroup;
 			children = (
+				E26B089F256CAD4F00C41D00 /* BigImg */,
 				EAA5789424E036E300FCD8A8 /* Tools */,
 				EA2A7D3124D8736200CF0ACB /* view */,
 				EAA554C424D822F90053B610 /* PingTool */,
@@ -248,6 +271,7 @@
 		EAA5789424E036E300FCD8A8 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				EAF9247F251F8F46005CCCC1 /* ObjectSwiftHeader.h */,
 				EA8F818824F3A114004C84A0 /* Localized.swift */,
 				EAA5789524E0372F00FCD8A8 /* HeaderSwift.swift */,
 			);
@@ -367,7 +391,9 @@
 				EA06E02A24E2F2DB00A089F0 /* NodeListCell.xib in Resources */,
 				EAA5549C24D822AF0053B610 /* Assets.xcassets in Resources */,
 				EA06E02C24E2F2DB00A089F0 /* NodeListView.xib in Resources */,
+				E26B08A9256CBBF300C41D00 /* BigImgTbVC.xib in Resources */,
 				EAA5549A24D822AD0053B610 /* Main.storyboard in Resources */,
+				E26B08A4256CBB0400C41D00 /* timg.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +523,7 @@
 			files = (
 				EA2A7D3524D8739500CF0ACB /* ItemCell.m in Sources */,
 				EA8F818924F3A114004C84A0 /* Localized.swift in Sources */,
+				E26B08A2256CBA1700C41D00 /* BigImgViewInWindow.m in Sources */,
 				EAA5549724D822AD0053B610 /* ViewController.m in Sources */,
 				EAA554CD24D823150053B610 /* STSimplePing.m in Sources */,
 				EA06E02B24E2F2DB00A089F0 /* NodeListCell.swift in Sources */,
@@ -505,6 +532,7 @@
 				EAA5549124D822AD0053B610 /* AppDelegate.m in Sources */,
 				EAA554A224D822AF0053B610 /* main.m in Sources */,
 				EAA5549424D822AD0053B610 /* SceneDelegate.m in Sources */,
+				E26B08A8256CBBF300C41D00 /* BigImgTbVC.m in Sources */,
 				EAA554CF24D823150053B610 /* SimplePing.m in Sources */,
 				EAA554CE24D823150053B610 /* STDPingServices.m in Sources */,
 			);
@@ -689,6 +717,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zyp.MyTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/xindu/Desktop/ZYPGit/MyTools/MyTool/MyTool/Tools/ObjectSwiftHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
@@ -712,6 +741,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zyp.MyTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/xindu/Desktop/ZYPGit/MyTools/MyTool/MyTool/Tools/ObjectSwiftHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
