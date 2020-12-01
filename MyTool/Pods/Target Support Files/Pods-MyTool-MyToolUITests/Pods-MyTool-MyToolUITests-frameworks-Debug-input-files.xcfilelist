@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-MyTool-MyToolUITests/Pods-MyTool-MyToolUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AsyncSwift/Async.framework
+${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
