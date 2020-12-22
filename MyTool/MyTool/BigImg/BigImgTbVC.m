@@ -9,9 +9,10 @@
 #import "BigImgTbVC.h"
 #import "AppDelegate.h"
 #import "BigImgViewInWindow.h"
+#import "ImgCollectionView.h"
 
 @interface BigImgTbVC ()
-
+@property(strong,nonatomic)NSArray *imgArr;
 @end
 
 @implementation BigImgTbVC
@@ -42,20 +43,25 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 20;
+    return self.imgArr.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *acell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
     acell.textLabel.text  = @"点击图片";
-    [acell.imageView setImage:[UIImage imageNamed:@"timg.jpg"]];
+    [acell.imageView setImage:[UIImage imageNamed:self.imgArr[indexPath.row]]];
     return acell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *acell = [tableView cellForRowAtIndexPath:indexPath];
-    UIImageView *imgV = acell.imageView;
     AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-    BigImgViewInWindow *aview = [[BigImgViewInWindow alloc] initWithFrame:CGRectZero startFrame:[imgV convertRect:imgV.bounds toView:delegate.window]];
-    [aview showBigImgInWindowWith:nil];
+    
+    //单张图片
+//    BigImgViewInWindow *aview = [[BigImgViewInWindow alloc] initWithFrame:CGRectZero startFrame:[imgV convertRect:imgV.bounds toView:delegate.window]];
+//    [aview showBigImgInWindowWith:nil];
+    
+    //多张图片，类似微信朋友圈的多张图片效果
+    ImgCollectionView *imgC = [[ImgCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:[UICollectionViewFlowLayout new] originView:acell.imageView];
+    [imgC showBigImgArrsInWindowWith:self.imgArr andNowIndex:0];
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -116,6 +122,13 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 */
+
+-(NSArray *)imgArr{
+    if (_imgArr == nil) {
+        _imgArr = @[@"timg",@"timg",@"timg",@"timg",@"timg",@"timg"];
+    }
+    return _imgArr;
+}
 
 /*
 #pragma mark - Navigation

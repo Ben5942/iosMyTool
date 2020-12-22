@@ -7,6 +7,8 @@ target 'MyTool' do
 
   pod 'MBProgressHUD'
   pod 'AsyncSwift'
+  
+ pod 'SDWebImage'
 
   # Pods for MyTool
 
