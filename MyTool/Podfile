@@ -8,7 +8,7 @@ target 'MyTool' do
   pod 'MBProgressHUD'
   pod 'AsyncSwift'
   
- pod 'SDWebImage'
+ pod 'SDWebImage', '~> 3.7.1'
 
   # Pods for MyTool
 
